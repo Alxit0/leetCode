@@ -5,18 +5,23 @@ class ListNode:
 
 
 def create_linked_list(seq):
+    """
+    Create the linked list from a normal list
+    :return: the head of the list
+    """
     if len(seq) == 0:
         return None
     head = ListNode(seq[0])
-    cur = head
+    current = head
     for i in seq[1:]:
-        cur.next = ListNode(i)
-        cur = cur.next
+        current.next = ListNode(i)
+        current = current.next
 
     return head
 
 
 def main():
+    # tests
     temp = create_linked_list([1, 2, 3])
     print(temp.val)
     print(temp.next.val)
