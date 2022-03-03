@@ -37,6 +37,8 @@ def create_linked_list(seq: list):
 def create_tree(seq):
     # seq_aux = [*map(lambda x:TreeNode if x is not None else None, seq)]
     # [1, null, 2]
+    if len(seq) == 0:
+        return None
     seq_aux = [*map(TreeNode, seq)]
     head = seq_aux.pop(0)
     queue = [head]
