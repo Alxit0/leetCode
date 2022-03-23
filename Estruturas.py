@@ -81,12 +81,25 @@ def print_tree(node, prefix="", isLeft=True):
         print_tree(node.left, prefix + ("    " if isLeft else "│   "), True)
 
 
+def find_tree_node(h: TreeNode, val):
+    stack = [h]
+    while stack:
+        cur = stack.pop()
+        if cur is None:
+            continue
+        if cur.val == val:
+            return cur
+
+        stack.append(cur.left)
+        stack.append(cur.right)
+    return None
+
+
 def main():
     # tests
-    temp = create_linked_list([1, 2, 3])
-    print(temp.val)
-    print(temp.next.val)
-    print(temp.next.next.val)
+    temp = create_tree([1, 2, 3])
+    a = find_tree_node(temp, 1)
+    print(a, temp)
 
 
 if __name__ == '__main__':

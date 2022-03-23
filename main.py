@@ -1,29 +1,22 @@
-"""
-0 -> ''
-1 -> '()'
-"""
+import math
+
+prop = 3 * 10 ** 8
+dist = 10 * 10**3
+tp = dist / prop
+print(f"Tp = {dist} / {prop} = {tp}")
+
+tamanho = 25 * 2 ** 23  # 23 - M (nao mexer)
+B = 100 * 10 ** 6  # 6 - M
+M = 2**8
+SNdb = 15
+# SN = 10 ** (SNdb / 10)
+SN = 15
+# C = 2 * B * math.log2(M); print(f"C = 2 * {B} * {math.log2(M)} = {C}")
+C = B * math.log2(SN + 1); print(f"SN = 10 ** ({SNdb} / 10) = {SN}"); print(f"C = {B} * {math.log2(1 + SN)} = {C}")
+tx = tamanho / C
 
 
-def generate_pare(lvl: int, top=None, rep=0):
-    if top is None:
-        top = {''}
+print(f"Tx = {tamanho} / {C} = {tx}")
+print(f"Tx + Tp ~= {round(tx + tp, 3)}")
 
-    if lvl == 0:
-        # print(rep)
-        return top
-
-    new_set = set()
-    for i in top:
-        for j in [f'(){i}', f'({i})', f'{i}()']:
-            if j not in new_set:
-                new_set.add(j)
-            rep += 1
-
-    return generate_pare(lvl-1, new_set, rep)
-
-
-if __name__ == '__main__':
-    a = 3
-
-    print(generate_pare2(a), generate_pare(a))
-
+print(2**( (100 * 2**20) / (2*20*10**6) ))
