@@ -75,7 +75,7 @@ def print_tree(node, prefix="", isLeft=True):
     if node.right:
         print_tree(node.right, prefix + ("│   " if isLeft else "    "), False)
 
-    print(prefix + ("└── " if isLeft else "┌── ") + str(node.val))
+    print(prefix + ("└── " if isLeft else "┌── ") + str(node))
 
     if node.left:
         print_tree(node.left, prefix + ("    " if isLeft else "│   "), True)
