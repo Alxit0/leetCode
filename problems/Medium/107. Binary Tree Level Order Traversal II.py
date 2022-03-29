@@ -1,5 +1,5 @@
 from typing import Optional, List
-from Estruturas import TreeNode, create_tree
+from Structs.Binary_Tree import TreeNode, create_tree
 
 
 def levelOrderBottom(root: Optional[TreeNode]) -> List[List[int]]:

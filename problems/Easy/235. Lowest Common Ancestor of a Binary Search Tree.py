@@ -1,4 +1,4 @@
-from Estruturas import TreeNode, create_tree, print_tree, find_tree_node
+from Structs.Binary_Tree import TreeNode, create_tree, print_tree, find_tree_node
 from typing import Optional
 
 

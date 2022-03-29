@@ -1,5 +1,5 @@
 from typing import Optional
-from Estruturas import TreeNode, create_tree, print_tree
+from Structs.Binary_Tree import TreeNode, create_tree, print_tree
 
 
 def hasPathSum(root: Optional[TreeNode], targetSum: int) -> bool:

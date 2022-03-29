@@ -1,5 +1,5 @@
 from typing import List, Optional
-from Estruturas import TreeNode, print_tree
+from Structs.Binary_Tree import TreeNode, print_tree
 
 
 def buildTree(preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:

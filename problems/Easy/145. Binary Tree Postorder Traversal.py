@@ -1,6 +1,6 @@
 import re
 from typing import Optional, List
-from Estruturas import TreeNode, print_tree, create_tree
+from Structs.Binary_Tree import TreeNode, create_tree, print_tree
 
 
 def postorderTraversal(root: Optional[TreeNode]) -> List[int]:
