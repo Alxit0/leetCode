@@ -20,3 +20,5 @@ print(f"Tx = {tamanho} / {C} = {tx}")
 print(f"Tx + Tp ~= {round(tx + tp, 3)}")
 
 print(2**( (100 * 2**20) / (2*20*10**6) ))
+
+# teste
