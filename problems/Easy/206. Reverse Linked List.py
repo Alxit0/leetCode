@@ -1,5 +1,9 @@
 from typing import Optional
-from Estruturas import ListNode, create_linked_list, print_linked_list
+
+class ListNode:
+    def __init__(self, x, nex=None):
+        self.val = x
+        self.next = nex
 
 
 def reverseList(head: Optional[ListNode]) -> Optional[ListNode]:
@@ -15,12 +19,7 @@ def reverseList(head: Optional[ListNode]) -> Optional[ListNode]:
 
 
 def main():
-    a = [1, 2, 3, 4, 5]
-    lk = create_linked_list(a)
-    print_linked_list(lk)
-    resp = reverseList(lk)
-    print_linked_list(resp)
-
+    pass
 
 if __name__ == '__main__':
     main()

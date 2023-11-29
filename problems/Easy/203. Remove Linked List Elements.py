@@ -1,5 +1,9 @@
 from typing import Optional
-from Estruturas import ListNode, create_linked_list, print_linked_list
+
+class ListNode:
+    def __init__(self, x, nex=None):
+        self.val = x
+        self.next = nex
 
 
 def removeElements(head: Optional[ListNode], val: int) -> Optional[ListNode]:
@@ -19,12 +23,7 @@ def removeElements(head: Optional[ListNode], val: int) -> Optional[ListNode]:
 
 
 def main():
-    a = [6, 6]
-    b = 6
-    lk = create_linked_list(a)
-
-    resposta = removeElements(lk, b)
-    print_linked_list(resposta)
+    pass
 
 
 if __name__ == '__main__':

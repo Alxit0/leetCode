@@ -1,5 +1,9 @@
 from typing import Optional
-from Estruturas import ListNode, create_linked_list
+
+class ListNode:
+    def __init__(self, x, nex=None):
+        self.val = x
+        self.next = nex
 
 
 def hasCycle(head: Optional[ListNode]) -> bool:
@@ -17,23 +21,7 @@ def hasCycle(head: Optional[ListNode]) -> bool:
 
 
 def main():
-    a = [1, 2, 3, 4, 5, 6, 7]
-    b = -1
-
-    array = create_linked_list(a)
-    cur = array
-    p = 0
-    target = None
-    while b != -1 and cur.next is not None:
-        if p == b:
-            target = cur
-        cur = cur.next
-        p += 1
-    else:
-        if b!=-1:
-            cur.next = target
-
-    print(hasCycle(array))
+	pass
 
 
 if __name__ == '__main__':

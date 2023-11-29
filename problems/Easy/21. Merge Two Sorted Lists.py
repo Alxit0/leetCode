@@ -1,6 +1,9 @@
 from typing import Optional
-from Estruturas import ListNode, create_linked_list, print_linked_list
 
+class ListNode:
+    def __init__(self, x, nex=None):
+        self.val = x
+        self.next = nex
 
 def mergeTwoLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
     if list1 is None:
@@ -17,14 +20,7 @@ def mergeTwoLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optio
 
 
 def main():
-    a = [1, 5]
-    b = [2, 3, 4]
-    lista1 = create_linked_list(a)
-    lista2 = create_linked_list(b)
-
-    resposta = mergeTwoLists(lista1, lista2)
-    print_linked_list(resposta)
-
+    pass
 
 if __name__ == '__main__':
     main()

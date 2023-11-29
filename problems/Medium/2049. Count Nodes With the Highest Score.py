@@ -1,5 +1,5 @@
 from typing import List
-from Estruturas import print_tree
+
 
 class Node:
     def __init__(self, val, left=None, right=None):
