@@ -1,45 +1,90 @@
+"""
+not done
+"""
+
 from typing import Optional
-from Structs.List import ListNode, create_linked_list, print_linked_list
 
 
-def reverseKGroup(head: Optional[ListNode], k: int) -> Optional[ListNode]:
-    cur = node_grupo = head
-    p = 0
-    while cur:
-        print(cur.val, node_grupo.val)
-        if p == 0:
-            node_grupo = cur
-        elif p == k:
-            p = 0
-            node_grupo.next = cur
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next: ListNode = next
+
+class Solution:
+    
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        # check lenght at least k
+        cur = head
+        for _ in range(k):
+            if cur is None:
+                return head
+            
             cur = cur.next
-        cur = cur.next
-        p += 1
 
+        # reverse list k elements
+        prev = None
+        cur = head
+        for _ in range(k):
+            next_node = cur.next
+            cur.next = prev
+            
+            prev = cur
+            cur = next_node
+        
+        head.next = self.reverseKGroup(cur, k)
+        
+        return prev
+
+
+
+def test(fun, case, res):
+    def _gen_lk_list(nums):
+        res = head = ListNode()
+        for i in nums:
+            res.next = ListNode(i)
+            res = res.next
+        
+        return head.next
+    
+    def _degen_lk_list(lk_list):
+        res = []
+        
+        cur = lk_list
+        while cur is not None:
+            res.append(cur.val)
+            cur = cur.next
+        
+        return res
+    
+    nums, k = case
+    lk_nums = _gen_lk_list(nums)
+    sol = _degen_lk_list(fun(lk_nums, k))
+    
+    if sol == res:
+        print("OK")
+    else:
+        print(sol)
+        print(res)
+        print()
 
 def main():
-    a = [1, 2, 3, 4, 5]
-    b = 2
-    h = create_linked_list(a)
-    print_linked_list(h)
-    h2 = reverseKGroup(h, b)
-    print_linked_list(h2, debug=True)
-    # h2 = reverse_lk_list_k(h, 4)
+    s = Solution()
 
+    test(
+        s.reverseKGroup,
+        ([1,2,3,4,5], 2),
+        [2,1,4,3,5]
+    )
+    test(
+        s.reverseKGroup,
+        ([1,2,3,4,5], 3),
+        [3,2,1,4,5]
+    )
+    test(
+        s.reverseKGroup,
+        ([1,2], 2),
+        [2,1]
+    )
 
 if __name__ == '__main__':
     main()
-
-"""
-n = 1
-1 -> 2 -> 3 -> 4 -> 5 -> 6
-
-n = 1
-1 <- 2    3 -> 4 -> 5 -> 6
-
-n = 1
-1 <- 2 <- 3  4 -> 5 -> 6
-
-n = 4
-3 -> 2 -> 1 -> 4 -> 5 -> 6
-"""
